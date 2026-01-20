@@ -30,3 +30,5 @@ int main()
     cout << "Your Total Sum: " << res;
     return 0;
 }
+
+// This is for today
