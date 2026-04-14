@@ -7,7 +7,7 @@ void BubbleSort(int arr[], int n)
     {
         for (int j = 0; j <= i - 1; j++)
         {
-            if (arr[j] > arr[j + 1])
+            if (arr[j] > arr[j + 1]) 
             {
                 int temp = arr[j + 1];
                 arr[j + 1] = arr[j];
@@ -22,12 +22,16 @@ int main()
     int n;
     cout << "Enter the Size of your Array : ";
     cin >> n;
-    int arr[n];
+
+    int arr[n]; 
+
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
     }
+
     BubbleSort(arr, n);
+
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";

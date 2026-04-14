@@ -12,6 +12,7 @@ int partition(vector<int> &arr, int low, int high)
         {
             i++;
         }
+
         while (arr[j] > pivot && j >= low + 1)
         {
             j--;
@@ -20,24 +21,24 @@ int partition(vector<int> &arr, int low, int high)
         {
             swap(arr[i], arr[j]);
         }
+        swap(arr[low], arr[j]);
+        return j;
     }
-    swap(arr[low], arr[j]);
-    return j;
 }
 
-void QuickS(vector<int> &arr, int low, int high)
+void QS(vector<int> &arr, int low, int high)
 {
     if (low < high)
     {
         int pIndex = partition(arr, low, high);
-        QuickS(arr, low, pIndex - 1);
-        QuickS(arr, pIndex + 1, high);
+        QS(arr, low, pIndex);
+        QS(arr, pIndex + 1, high);
     }
 }
 
 vector<int> QuickSort(vector<int> &arr)
 {
-    QuickS(arr, 0, arr.size() - 1);
+    QS(arr, 0, arr.size() - 1);
     return arr;
 }
 
@@ -53,7 +54,7 @@ int main()
     }
     QuickSort(arr);
     for (int i = 0; i < n; i++)
-    {   
+    {
         cout << arr[i] << " ";
     }
 }
