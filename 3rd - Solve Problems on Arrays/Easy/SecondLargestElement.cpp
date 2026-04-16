@@ -1,17 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int LargeNumber(int arr[], int n)
+int SecondLargestNumber(int arr[], int n)
 {
     int LargeNo = arr[0];
+    int SecondLargeNo = -1;
     for (int i = 0; i < n; i++)
     {
         if (LargeNo < arr[i])
         {
-           LargeNo = arr[i];
+            LargeNo = arr[i];
         }
     }
-    return LargeNo;
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i]>SecondLargeNo && arr[i]!=LargeNo)
+        {
+            SecondLargeNo = arr[i];
+        }
+        
+    }
+    return SecondLargeNo;
+    
 }
 
 int main()
@@ -24,5 +34,5 @@ int main()
     {
         cin >> arr[i];
     }
-    cout << LargeNumber(arr, n);
+    cout << SecondLargestNumber(arr, n);
 }
