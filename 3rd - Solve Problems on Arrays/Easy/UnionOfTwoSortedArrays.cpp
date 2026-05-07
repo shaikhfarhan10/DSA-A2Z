@@ -6,6 +6,5 @@ int main()
     int n;
     cout << "Enter the Size of your Array : ";
     cin >> n;
-    int arr[n];
     
 }
